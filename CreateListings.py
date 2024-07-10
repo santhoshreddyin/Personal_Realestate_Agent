@@ -1,3 +1,13 @@
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage
+
+
+
+
+
+model = ChatOpenAI(model="gpt-3.5-turbo")
+
+model.invoke([HumanMessage(content="Hi! I'm Bob")])
 
 
 
@@ -12,6 +22,7 @@ try:
 except ValueError:
     print("Please enter a valid number.")
     exit()
+    
 example_format = """
 
 Neighborhood: Green Oaks
@@ -23,5 +34,8 @@ Description: Welcome to this eco-friendly oasis nestled in the heart of Green Oa
 Neighborhood Description: Green Oaks is a close-knit, environmentally-conscious community with access to organic grocery stores, community gardens, and bike paths. Take a stroll through the nearby Green Oaks Park or grab a cup of coffee at the cozy Green Bean Cafe. With easy access to public transportation and bike lanes, commuting is a breeze."""
 Prompt = f"Create {n} Real estate listing for the following property with the following example format:{example_format}\n\n"
 
-print(Prompt)
+# Call openai from longchain
+#response = openai.create_listing(Prompt, n)
+
+#print(response)
 # Step 3: Storing Listings in a Vector Database
