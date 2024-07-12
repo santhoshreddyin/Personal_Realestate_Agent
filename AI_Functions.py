@@ -1,5 +1,8 @@
-from openai import OpenAI
-client = OpenAI()
+#from openai import OpenAI
+#client = OpenAI()
+
+
+print("Hello World")
 
 def call_llm(llm_model, messages, tools):
     response = client.chat.completions.create(
@@ -9,6 +12,3 @@ def call_llm(llm_model, messages, tools):
             tool_choice="required",  # Forcing the use of tools
         )
     return response.choices[0].message
-
-
-print("Hello World")
